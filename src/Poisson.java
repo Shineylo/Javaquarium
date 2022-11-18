@@ -1,6 +1,7 @@
 public abstract class Poisson {
     private String nom;
     private Sexe sexe;
+    private boolean agis = false;
 
     public Poisson(String nom, Sexe sexe) {
         this.nom = nom;
@@ -24,4 +25,11 @@ public abstract class Poisson {
         return sexe;
     }
 
+    public boolean isAgis() {
+        return agis;
+    }
+
+    public void setAgis(boolean agis) {
+        this.agis = agis;
+    }
 }
