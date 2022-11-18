@@ -1,4 +1,4 @@
-public class Poisson {
+public abstract class Poisson {
     private String nom;
     private Sexe sexe;
 
@@ -23,4 +23,5 @@ public class Poisson {
     public Sexe getSexe() {
         return sexe;
     }
+
 }

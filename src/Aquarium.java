@@ -9,7 +9,7 @@ public class Aquarium {
     }
 
     public ArrayList<Algue> getListeAlgues() {
-        return new ArrayList<>(listeAlgues);i
+        return new ArrayList<>(listeAlgues);
     }
 
     public void ajoutPoisson(Poisson poisson){
@@ -22,5 +22,13 @@ public class Aquarium {
 
     public void passeTemps(){
 
+    }
+
+    public int nbrAlgue(){
+        return this.listeAlgues.size();
+    }
+
+    public Poisson montrerPoisson(int index){
+        return this.listePoisson.get(index);
     }
 }
