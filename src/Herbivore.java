@@ -5,7 +5,6 @@ public abstract class Herbivore extends Poisson {
     }
 
     public void manger(Algue algue) {
-        this.setAgis(true);
         this.modifVie(+3);
         algue.estMange();
     }

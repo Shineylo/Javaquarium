@@ -17,6 +17,12 @@ public class Algue extends EtreVivant{
 
     @Override
     public void vit(){
+        this.vieillir();
         this.modifVie(1);
+    }
+
+    @Override
+    public void presentation(){
+        System.out.println("nom algue age "+this.getAge() + " pv "+ this.getPv());
     }
 }

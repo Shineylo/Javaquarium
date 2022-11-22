@@ -1,7 +1,6 @@
 public abstract class Poisson extends EtreVivant{
     private String nom;
     private Sexe sexe;
-    private boolean agis = false;
 
     public Poisson(String nom, Sexe sexe) {
         this.nom = nom;
@@ -25,22 +24,19 @@ public abstract class Poisson extends EtreVivant{
         return sexe;
     }
 
-    public boolean getAgis() {
-        return agis;
-    }
-
-    public void setAgis(boolean agis) {
-        this.agis = agis;
-    }
-
     @Override
     public void estMange() {
-        this.agis = true;
         this.modifVie(-4);
     }
 
     @Override
     public void vit(){
+        this.vieillir();
         this.modifVie(-1);
+    }
+
+    @Override
+    public void presentation(){
+        System.out.println("nom "+this.nom +" age "+this.getAge() + " pv "+ this.getPv());
     }
 }
