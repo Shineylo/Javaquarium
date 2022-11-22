@@ -23,25 +23,28 @@ public class Aquarium {
     public void passeTemps(){
         if(listePoisson.size()>0){
             for (int i = 0;i<listePoisson.size();i++) {
-                if (!listePoisson.get(i).getAgis()) {
-                    if (listePoisson.get(i) instanceof Herbivore) {
-                        if (listeAlgues.size() > 0) {
-                            while (!listePoisson.get(i).getAgis()) {
-                                int nbrRand = (int) (Math.random() * listeAlgues.size());
-                                if (!listeAlgues.get(nbrRand).getAgis()) {
-                                    ((Herbivore) listePoisson.get(i)).manger(listeAlgues.get(nbrRand));
-                                    System.out.println(listePoisson.get(i).getNom() + " mange algue");
+                Poisson cePoisson = listePoisson.get(i);
+                if(cePoisson.getPv()<=10) {
+                    if (!cePoisson.getAgis()) {
+                        if (cePoisson instanceof Herbivore) {
+                            if (listeAlgues.size() > 0) {
+                                while (!cePoisson.getAgis()) {
+                                    int nbrRand = (int) (Math.random() * listeAlgues.size());
+                                    if (!listeAlgues.get(nbrRand).getAgis()) {
+                                        ((Herbivore) cePoisson).manger(listeAlgues.get(nbrRand));
+                                        System.out.println(cePoisson.getNom() + " mange algue");
+                                    }
                                 }
+                            } else {
+                                throw new videException("algue");
                             }
-                        } else {
-                            throw new videException("algue");
-                        }
-                    } else if (listePoisson.get(i) instanceof Carnivore) {
-                        while (!listePoisson.get(i).getAgis()) {
-                            int nbrRand = (int) (Math.random() * listePoisson.size());
-                            if (!listePoisson.get(nbrRand).getAgis()) {
-                                ((Carnivore) listePoisson.get(i)).manger(listePoisson.get(nbrRand));
-                                System.out.println(listePoisson.get(i).getNom() + " mange " + listePoisson.get(nbrRand).getNom());
+                        } else if (cePoisson instanceof Carnivore) {
+                            while (!cePoisson.getAgis()) {
+                                int nbrRand = (int) (Math.random() * listePoisson.size());
+                                if (!listePoisson.get(nbrRand).getAgis() && nbrRand !=i &&!listePoisson.getClass().equals(cePoisson.getClass())) {
+                                    ((Carnivore) cePoisson).manger(listePoisson.get(nbrRand));
+                                    System.out.println(cePoisson.getNom() + " mange " + listePoisson.get(nbrRand).getNom());
+                                }
                             }
                         }
                     }

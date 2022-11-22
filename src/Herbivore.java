@@ -4,9 +4,9 @@ public abstract class Herbivore extends Poisson {
         super(nom, sexe);
     }
 
-    public Algue manger(Algue algue) {
+    public void manger(Algue algue) {
         this.setAgis(true);
-        algue.setAgis(true);
-        return algue;
+        this.modifVie(+3);
+        algue.estMange();
     }
 }

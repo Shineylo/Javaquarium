@@ -1,4 +1,4 @@
-public abstract class Poisson {
+public abstract class Poisson extends EtreVivant{
     private String nom;
     private Sexe sexe;
     private boolean agis = false;
@@ -31,5 +31,16 @@ public abstract class Poisson {
 
     public void setAgis(boolean agis) {
         this.agis = agis;
+    }
+
+    @Override
+    public void estMange() {
+        this.agis = true;
+        this.modifVie(-4);
+    }
+
+    @Override
+    public void vit(){
+        this.modifVie(-1);
     }
 }

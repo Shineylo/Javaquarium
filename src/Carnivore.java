@@ -3,9 +3,9 @@ public abstract class Carnivore extends Poisson{
         super(nom, sexe);
     }
 
-    public Poisson manger(Poisson poisson) {
+    public void manger(Poisson poisson) {
         this.setAgis(true);
-        poisson.setAgis(true);
-        return poisson;
+        this.modifVie(+5);
+        poisson.estMange();
     }
 }
