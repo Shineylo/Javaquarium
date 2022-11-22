@@ -25,7 +25,7 @@ public abstract class Poisson {
         return sexe;
     }
 
-    public boolean isAgis() {
+    public boolean getAgis() {
         return agis;
     }
 

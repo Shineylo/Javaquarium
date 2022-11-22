@@ -1,7 +1,7 @@
 public class Algue {
     private boolean agis = false;
 
-    public boolean isAgis() {
+    public boolean getAgis() {
         return agis;
     }
 
