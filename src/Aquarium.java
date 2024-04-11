@@ -1,3 +1,6 @@
+import Vivant.Algue.Algue;
+import Vivant.Poisson.Poisson;
+
 import java.util.ArrayList;
 
 public class Aquarium {
@@ -19,7 +22,7 @@ public class Aquarium {
     }
 
     public void NouveauPoisson(String nom, Sexe sexe){
-        peuple.add(new Poisson(nom,sexe));
+        peuple.add(new Poisson(nom,sexe.toString()));
     }
 
     public void NouvelleAlgue(){
