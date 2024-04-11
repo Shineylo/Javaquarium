@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 public class Aquarium {
 
+
     private ArrayList<Poisson> peuple = new ArrayList<>();
     private ArrayList<Algue> vegetation = new ArrayList<>();
     private int tour = 0;
@@ -21,8 +22,8 @@ public class Aquarium {
         return peuple;
     }
 
-    public void NouveauPoisson(String nom, Sexe sexe){
-        peuple.add(new Poisson(nom,sexe.toString()));
+    public void NouveauPoisson(Race race,String nom, Sexe sexe){
+        peuple.add(new Poisson(race.toString(),nom,sexe.toString()));
     }
 
     public void NouvelleAlgue(){
@@ -30,7 +31,7 @@ public class Aquarium {
     }
 
     public void NouveauTour(){
-        //Faire des choses
+        //Les poissons mangent
         tour++;
     }
 }

@@ -5,10 +5,16 @@ import Vivant.EtreVivant;
 public class Poisson implements EtreVivant {
     private final String nom;
     private final String sexe;
+    private final String race;
 
-    public Poisson(String nouveauNom, String nouveauSexe){
+    public Poisson(String nouvelleRace, String nouveauNom, String nouveauSexe){
+        this.race = nouvelleRace;
         this.nom = nouveauNom;
         this.sexe = nouveauSexe;
+    }
+
+    public String getRace() {
+        return race;
     }
 
     public String getNom() {
@@ -19,3 +25,5 @@ public class Poisson implements EtreVivant {
         return sexe;
     }
 }
+
+

@@ -4,8 +4,8 @@ public class Main {
     public static void main(String[] args) {
         Aquarium monAquarium = new Aquarium();
 
-        monAquarium.NouveauPoisson("Albert",Sexe.Mâle);
-        monAquarium.NouveauPoisson("Jeanne",Sexe.Femelle);
+        monAquarium.NouveauPoisson(Race.Bar,"Albert",Sexe.Mâle);
+        monAquarium.NouveauPoisson(Race.Mérou,"Jeanne",Sexe.Femelle);
 
         monAquarium.NouvelleAlgue();
 
