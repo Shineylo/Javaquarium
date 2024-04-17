@@ -1,10 +1,8 @@
 package Vivant.Poisson;
 
 public class Carnivore extends Poisson implements Regime.Carnivore{
-
-
-    public Carnivore(String nouvelleRace, String nouveauNom, String nouveauSexe) {
-        super(nouvelleRace, nouveauNom, nouveauSexe);
+    public Carnivore(String nouveauNom, Sexe nouveauSexe) {
+        super(nouveauNom, nouveauSexe);
     }
 
     @Override
